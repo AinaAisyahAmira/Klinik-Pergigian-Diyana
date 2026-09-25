@@ -1,0 +1,212 @@
+body {
+    background: #AFEEEE;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(135deg, rgba(46, 139, 139, 0.35), rgba(23, 162, 184, 0.35)),
+        repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 2px, transparent 2px, transparent 6px);
+    z-index: -1;
+}
+
+.header {
+    background: linear-gradient(90deg, #2E8B8B, #3A5F6F);
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+.sidebar {
+    background: linear-gradient(180deg, #2E8B8B, #3A5F6F);
+    color: white;
+    height: calc(100vh - 60px);
+    padding: 20px;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    z-index: 1000;
+}
+
+.sidebar.show {
+    transform: translateX(0);
+}
+
+.sidebar .logo-box {
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar .logo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sidebar .nav-link {
+    background-color: white;
+    color: #2E8B8B;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #17a2b8;
+    color: white;
+    transform: scale(1.05);
+}
+
+.sidebar .nav-link.active {
+    background-color: #3A5F6F;
+    color: white;
+}
+
+.content {
+    padding: 30px;
+    flex-grow: 1;
+    margin-left: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.content.shift {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    z-index: 0;
+    pointer-events: none;
+}
+
+.card .card-body,
+.card table {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.status-badge {
+    display: flex;
+    width: 100%;
+    min-height: 38px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-cell {
+    padding: 0 !important;
+}
+
+.status-approved {
+    background: #d9f2df;
+    color: #207a39;
+}
+
+.status-pending {
+    background: #fff0cf;
+    color: #a56500;
+}
+
+.status-cancelled {
+    background: #fbdada;
+    color: #b52b2b;
+}
+
+.status-done {
+    background: #d9eaff;
+    color: #1e5fa8;
+}
+
+.status-unknown {
+    background: #e9ecef;
+    color: #495057;
+}
+
+thead {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.footer {
+    background: linear-gradient(90deg, #2E8B8B, #3A5F6F);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    margin-top: auto;
+}

@@ -1,0 +1,110 @@
+:root {
+    --brand: #688781;
+    --brand-dark: #3f625d;
+}
+
+/* =========================================
+   PUBLIC NAV (index, gallery, services)
+   Single source of truth — header.css is
+   included on every public page via header.php
+   ========================================= */
+
+.navbar {
+    background-color: var(--brand) !important;
+    background: var(--brand) !important;
+    position: relative !important;
+    z-index: 1050 !important;
+    padding: 10px 14px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.navbar .navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    font-size: 23px;
+}
+
+.navbar .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+    color: #e7f1ef !important;
+}
+
+.navbar .btn {
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    padding: 6px 14px;
+}
+
+.navbar .btn-light {
+    background: white !important;
+    color: var(--brand-dark) !important;
+    border-color: white !important;
+}
+
+.navbar .btn-light:hover {
+    background: #f0f4f3 !important;
+    color: var(--brand-dark) !important;
+}
+
+.navbar .btn-outline-light {
+    background: transparent !important;
+    color: white !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.navbar .btn-outline-light:hover {
+    background: white !important;
+    color: var(--brand-dark) !important;
+}
+
+/* =========================================
+   DASHBOARD HEADER (patient, staff, admin)
+   ========================================= */
+
+.header { 
+        background-color: var(--brand) !important;
+        color:white; 
+        padding: 10px 14px !important;
+        position: relative !important;
+        z-index: 1050 !important;
+        display:flex; 
+        justify-content:space-between; 
+        align-items:center;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+.header-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.header-title h5,
+.header-title h4 {
+    color: white;
+    font-weight: 700;
+    font-size: 23px;
+    margin: 0;
+}
+.header-title h6 {
+    margin: 2px 0 0;
+    font-weight: 500;
+    color: white;
+}
+.header-profile {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%;
+    align-items: center;
+}
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover; /* Prevents image distortion */
+  cursor: pointer;
+  border: 2px solid #fff;
+}

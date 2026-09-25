@@ -1,0 +1,172 @@
+/* Styles for the availability calendar inside #bookingModal.
+   Class names are prefixed generically (cal-, dot-, time-slot-) so they
+   shouldn't collide with anything already in css/index.css — rename if needed. */
+
+.booking-col .calendar-card{
+  border: 1px solid #e5e2da;
+  border-radius: 12px;
+  padding: .85rem;
+  background: #fff;
+}
+
+.booking-col .cal-title{
+  font-weight: 600;
+  color: var(--brand, #2f7a6b);
+}
+.booking-col .cal-nav{
+  color: var(--brand, #2f7a6b);
+  text-decoration: none;
+}
+
+.booking-col .calendar-grid{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+.booking-col .weekday-row{
+  font-size: .68rem;
+  font-weight: 700;
+  color: #8a8a84;
+  margin-bottom: 2px;
+}
+
+.booking-col .cal-day{
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: .78rem;
+  color: #b9b6ae;
+  user-select: none;
+}
+.booking-col .cal-day.in-month{ color: #333; }
+
+.booking-col .cal-day.is-available{
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1.5px #2fbf9b;
+}
+.booking-col .cal-day.is-available:hover{ background: #e6f7f2; }
+
+.booking-col .cal-day.is-full{
+  box-shadow: inset 0 0 0 1.5px #e2685a;
+  color: #b34a3d;
+  cursor: not-allowed;
+}
+
+.booking-col .cal-day.is-unavailable{
+  background: #efefec;
+  color: #8b8b85;
+  cursor: not-allowed;
+}
+
+.booking-col .cal-day.is-past{
+  color: #d8d6cf;
+  cursor: not-allowed;
+}
+
+.booking-col .cal-day.is-selected{
+  background: var(--brand, #2f7a6b) !important;
+  color: #fff !important;
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.booking-col .dot{
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+.booking-col .dot-available{ background: #2fbf9b; }
+.booking-col .dot-unavailable{ background: #3a3a3a; }
+.booking-col .dot-full{ background: #e2685a; }
+.booking-col .dot-selected{ background: var(--brand, #2f7a6b); }
+.booking-col .legend{ color: #6a6a64; }
+
+.booking-col .time-slot-btn{
+  border: 1.5px solid #dcd9d1;
+  background: #fff;
+  border-radius: 8px;
+  padding: .35rem .7rem;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #333;
+}
+.booking-col .time-slot-btn.taken{
+  color: #b0aca3;
+  background: #f2f1ec;
+  border-color: #f2f1ec;
+  cursor: not-allowed;
+}
+.booking-col .time-slot-btn.chosen{
+  background: var(--brand, #2f7a6b);
+  border-color: var(--brand, #2f7a6b);
+  color: #fff;
+}
+
+/* ================= Themed dropdowns (dentist / treatment) ================= */
+
+.booking-col .themed-select{
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.booking-col .themed-select .select-icon{
+  position: absolute;
+  left: 14px;
+  font-size: .95rem;
+  color: var(--brand, #2f7a6b);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.booking-col .themed-select select.form-select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  padding: .6rem 2.4rem .6rem 2.6rem; /* room for icon (left) + arrow (right) */
+  border: 1.5px solid #dcd6c8;
+  border-radius: 999px;               /* pill shape, matches the rounded/elegant look */
+  background-color: #fdfcf9;
+  color: #333;
+  font-size: .92rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, background-color .18s ease;
+
+  /* custom chevron, drawn as an SVG so it can be tinted to the brand color */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%232f7a6b' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 13px 8px;
+}
+
+.booking-col .themed-select select.form-select:hover{
+  border-color: var(--brand, #2f7a6b);
+  background-color: #fff;
+}
+
+.booking-col .themed-select select.form-select:focus{
+  outline: none;
+  border-color: var(--brand, #2f7a6b);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgba(47, 122, 107, .14); /* soft teal glow instead of Bootstrap blue */
+}
+
+.booking-col .themed-select select.form-select:disabled{
+  background-color: #f2f1ec;
+  color: #a8a49a;
+  cursor: not-allowed;
+}
+
+/* Once a real dentist/treatment is chosen (not the empty placeholder),
+   nudge the text color to full brand-dark for a bit more "chosen" weight. */
+.booking-col .themed-select select.form-select:not([value=""]):valid{
+  color: #1f2a26;
+}

@@ -1,0 +1,180 @@
+:root {
+      --brand: #688781;
+    }
+    body {
+      background: url('img/bg.jfif') no-repeat center center fixed;
+      background-size: cover;
+      display:flex; 
+      flex-direction:column; 
+      min-height:100vh;
+      font-family:'Segoe UI', sans-serif;
+      margin:0;
+    }
+    h1, h4, .footer-heading {
+      font-family:'Old Standard TT', serif;
+    }
+    /* .navbar rules now live in header.css only */
+    .content {
+      padding:40px;
+      flex-grow:1;
+      margin-bottom:0;
+      background:rgba(255,255,255,0.92);
+      border-radius:12px;
+    }
+
+    /* Hero - matches homepage gradient-over-photo treatment */
+    .hero {
+      background:linear-gradient(rgba(10,20,18,0.55), rgba(10,20,18,0.55)), url('../img/clinic3.jpeg') center/cover no-repeat;
+      padding:100px 30px;
+      border-radius:12px;
+      margin-bottom:35px;
+      background-attachment:fixed;
+      color:white;
+      text-align:center;
+    }
+    .hero h1 {
+      font-size:38px;
+      font-weight:700;
+      text-shadow:0 2px 8px rgba(0,0,0,0.35);
+    }
+    .hero p {
+      font-size:18px;
+      margin-top:12px;
+      opacity:0.95;
+    }
+
+    /* Filter pills */
+    .gallery-filters {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:10px;
+      margin-bottom:35px;
+    }
+    .gallery-filters button {
+      border:1px solid var(--brand);
+      background:transparent;
+      color:var(--brand);
+      padding:8px 20px;
+      border-radius:30px;
+      font-size:14px;
+      font-weight:500;
+      transition:.2s ease;
+    }
+    .gallery-filters button:hover {
+      background:rgba(104,135,129,0.1);
+    }
+    .gallery-filters button.active {
+      background:var(--brand);
+      color:#fff;
+    }
+
+    /* Gallery grid */
+    .gallery-grid {
+      margin-bottom:10px;
+    }
+    .gallery-item {
+      position:relative;
+      overflow:hidden;
+      border-radius:10px;
+      aspect-ratio: 4 / 3;
+      cursor:pointer;
+      background:#e9ecef;
+    }
+    .gallery-item img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:transform .4s ease;
+      display:block;
+    }
+    .gallery-item:hover img {
+      transform:scale(1.08);
+    }
+    .gallery-overlay {
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(10,20,18,0.75) 0%, rgba(10,20,18,0) 55%);
+      display:flex;
+      align-items:flex-end;
+      padding:14px;
+      opacity:0;
+      transition:opacity .3s ease;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity:1;
+    }
+    .gallery-overlay span {
+      color:#fff;
+      font-size:14px;
+      font-weight:500;
+    }
+    .gallery-overlay i {
+      position:absolute;
+      top:12px;
+      right:12px;
+      color:#fff;
+      font-size:1.1rem;
+      background:rgba(255,255,255,0.2);
+      border-radius:50%;
+      width:32px;
+      height:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .gallery-item.d-none-item {
+      display:none;
+    }
+
+    /* Lightbox modal */
+    #lightboxModal .modal-content {
+      background:transparent;
+      border:none;
+    }
+    #lightboxModal .modal-body {
+      position:relative;
+      padding:0;
+      text-align:center;
+    }
+    #lightboxImg {
+      max-height:80vh;
+      max-width:100%;
+      border-radius:8px;
+      box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    }
+    #lightboxCaption {
+      color:#fff;
+      margin-top:14px;
+      font-size:15px;
+    }
+    .lightbox-nav {
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(255,255,255,0.15);
+      border:none;
+      color:#fff;
+      width:46px;
+      height:46px;
+      border-radius:50%;
+      font-size:1.3rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .lightbox-nav:hover {
+      background:rgba(255,255,255,0.3);
+    }
+    #lightboxPrev { left:-10px; }
+    #lightboxNext { right:-10px; }
+    @media (min-width: 992px) {
+      #lightboxPrev { left:-60px; }
+      #lightboxNext { right:-60px; }
+    }
+    #lightboxModal .btn-close {
+      position:absolute;
+      top:-40px;
+      right:0;
+      filter:invert(1);
+    }

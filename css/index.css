@@ -1,0 +1,991 @@
+:root {
+    --brand: #688781;
+    --brand-dark: #3f625d;
+    --brand-soft: #edf4f2;
+    --cream: #f8f9f6;
+    --text: #263b39;
+    --muted: #687775;
+    --white: #ffffff;
+    --shadow: 0 8px 28px rgba(35, 61, 58, 0.08);
+    --radius: 16px;
+}
+
+
+/* =========================================
+   GENERAL
+   ========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.7;
+}
+
+h1,h2,h3,h4,
+.footer-heading {
+    font-family: "Old Standard TT", serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================================
+   HEADER / NAVBAR
+   Now defined once in header.css (loaded on
+   every page via header.php) — see header.css
+   ========================================= */
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+
+.hero {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    border-radius: 0 0 22px 22px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(19, 38, 35, 0.78) 0%,
+            rgba(19, 38, 35, 0.56) 45%,
+            rgba(19, 38, 35, 0.20) 100%
+        ),
+        url("../img/back2.jpg") center center / cover no-repeat;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    max-width: 680px;
+    padding: 80px 0;
+}
+
+
+/* Hero title */
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 1.02;
+
+    margin-bottom: 18px;
+
+    font-weight: 700;
+
+    color: white;
+
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Hero paragraph */
+
+.hero p {
+    font-size: clamp(17px, 2vw, 22px);
+
+    max-width: 590px;
+
+    margin-bottom: 30px;
+
+    color: rgba(255, 255, 255, 0.95);
+}
+
+
+/* =========================================
+   HERO BUTTON - BOOK APPOINTMENT
+   ========================================= */
+
+.hero .btn-brand {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--brand) !important;
+    background-color: var(--brand) !important;
+
+    color: white !important;
+
+    border: 1px solid var(--brand) !important;
+
+    border-radius: 9px;
+
+    padding: 11px 20px;
+
+    font-weight: 600;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    transition: all 0.2s ease;
+}
+
+.hero .btn-brand:hover {
+    background: var(--brand-dark) !important;
+    background-color: var(--brand-dark) !important;
+
+    border-color: var(--brand-dark) !important;
+
+    color: white !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO BUTTON - LIHAT PERKHIDMATAN
+   ========================================= */
+
+.hero .btn-light-outline {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: white !important;
+
+    background: rgba(255, 255, 255, 0.10) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.80) !important;
+
+    border-radius: 9px;
+
+    padding: 11px 20px;
+
+    font-weight: 600;
+
+    backdrop-filter: blur(4px);
+
+    transition: all 0.2s ease;
+}
+
+.hero .btn-light-outline:hover {
+    background: white !important;
+
+    color: var(--brand-dark) !important;
+
+    border-color: white !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   HERO TRUST ITEMS
+   ========================================= */
+
+.trust-row {
+    margin-top: 40px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.trust-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    padding: 8px 13px;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    color: white;
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.section {
+    padding: 70px 0;
+}
+
+.section-soft {
+    background: var(--brand-soft);
+}
+
+
+/* Section heading */
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    color: var(--brand-dark);
+
+    font-size: 36px;
+
+    margin-bottom: 7px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    margin-bottom: 0;
+}
+
+
+/* Small green line */
+
+.heading-line {
+    width: 45px;
+
+    height: 3px;
+
+    background: var(--brand);
+
+    margin: 13px auto 0;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   SERVICE CARDS
+   ========================================= */
+
+.service-card {
+    height: 100%;
+
+    background: white;
+
+    border: 1px solid #e8efed;
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 18px rgba(35, 61, 58, 0.05);
+
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Service icon */
+
+.service-icon {
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 50%;
+
+    background: var(--brand-soft);
+
+    color: var(--brand-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 26px;
+
+    margin: 24px auto 15px;
+}
+
+
+/* Service text */
+
+.service-card-body {
+    padding: 0 18px 20px;
+
+    text-align: center;
+}
+
+.service-card h4 {
+    font-size: 21px;
+
+    color: var(--brand-dark);
+
+    margin-bottom: 8px;
+}
+
+.service-card p {
+    font-size: 14px;
+
+    color: var(--muted);
+
+    margin-bottom: 18px;
+}
+
+
+/* Service image */
+
+.service-img {
+    width: 100%;
+
+    height: 125px;
+
+    object-fit: cover;
+}
+
+
+/* =========================================
+   KENAPA PILIH KAMI
+   ========================================= */
+
+.reason-card {
+    height: 100%;
+
+    background: white;
+
+    border: 1px solid #e3ece9;
+
+    border-radius: var(--radius);
+
+    padding: 27px 18px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 15px rgba(35, 61, 58, 0.04);
+
+    transition: transform 0.2s ease;
+}
+
+.reason-card:hover {
+    transform: translateY(-4px);
+}
+
+
+/* Reason icon */
+
+.reason-icon {
+    width: 55px;
+
+    height: 55px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: var(--brand-soft);
+
+    color: var(--brand-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+
+/* Reason title */
+
+.reason-card h4 {
+    font-size: 20px;
+
+    color: var(--brand-dark);
+
+    margin-bottom: 7px;
+}
+
+
+/* Reason description */
+
+.reason-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   VISI & MISI
+   ========================================= */
+
+.about-card,
+.location-card {
+    background: white;
+
+    border: 1px solid #e5ecea;
+
+    border-radius: var(--radius);
+
+    height: 100%;
+
+    box-shadow: var(--shadow);
+}
+
+.about-card {
+    padding: 34px;
+}
+
+
+/* Visi / Misi row */
+
+.vm-item {
+    display: flex;
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+.vm-item:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Visi / Misi icon */
+
+.vm-icon {
+    flex: 0 0 48px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    background: var(--brand-soft);
+
+    color: var(--brand-dark);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+}
+
+
+/* Visi / Misi heading */
+
+.vm-item h4 {
+    color: var(--brand-dark);
+
+    margin-bottom: 4px;
+
+    font-size: 21px;
+}
+
+
+/* Visi / Misi text */
+
+.vm-item p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   LOCATION
+   ========================================= */
+
+.location-card {
+    overflow: hidden;
+}
+
+.location-info {
+    padding: 30px;
+}
+
+.location-info h3 {
+    color: var(--brand-dark);
+
+    font-size: 27px;
+
+    margin-bottom: 20px;
+}
+
+
+/* Contact information */
+
+.contact-line {
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.contact-line i {
+    color: var(--brand);
+
+    font-size: 18px;
+}
+
+
+/* Google map */
+
+.map-wrap {
+    min-height: 100%;
+
+    height: 100%;
+}
+
+.map-wrap iframe {
+    width: 100%;
+
+    min-height: 360px;
+
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================
+   TIPS PENJAGAAN GIGI
+   ========================================= */
+
+.tip-card {
+    height: 100%;
+
+    background: white;
+
+    border: 1px solid #e5ecea;
+
+    border-radius: var(--radius);
+
+    padding: 25px 18px;
+
+    text-align: center;
+
+    transition: transform 0.2s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Tip number */
+
+.tip-number {
+    width: 42px;
+
+    height: 42px;
+
+    margin: 0 auto 14px;
+
+    border-radius: 50%;
+
+    background: var(--brand);
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+}
+
+
+/* Tip icon */
+
+.tip-card i {
+    display: block;
+
+    font-size: 26px;
+
+    color: var(--brand-dark);
+
+    margin-bottom: 9px;
+}
+
+
+/* Tip heading */
+
+.tip-card h4 {
+    color: var(--brand-dark);
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+}
+
+
+/* Tip description */
+
+.tip-card p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================================
+   FAQ
+   ========================================= */
+
+.faq-wrap {
+    max-width: 950px;
+
+    margin: auto;
+}
+
+
+/* FAQ item */
+
+.accordion-item {
+    border: 1px solid #e1e9e7 !important;
+
+    border-radius: 12px !important;
+
+    overflow: hidden;
+
+    margin-bottom: 12px;
+
+    box-shadow: 0 3px 12px rgba(35, 61, 58, 0.035);
+}
+
+
+/* FAQ question */
+
+.accordion-button {
+    font-weight: 600;
+
+    color: var(--text);
+
+    background: white;
+
+    padding: 18px 20px;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--brand-soft);
+
+    color: var(--brand-dark);
+
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+
+/* FAQ answer */
+
+.accordion-body {
+    color: var(--muted);
+
+    background: white;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   FINAL CTA
+   ========================================= */
+
+.cta {
+    margin: 0;
+
+    padding: 48px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--brand-dark),
+            var(--brand)
+        );
+
+    color: white;
+
+    border-radius: 20px;
+}
+
+.cta h2 {
+    font-size: 35px;
+
+    margin-bottom: 6px;
+
+    color: white;
+}
+
+.cta p {
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+
+/* CTA button */
+
+.cta .btn {
+    background: white;
+
+    color: var(--brand-dark);
+
+    border: 0;
+
+    border-radius: 9px;
+
+    padding: 12px 21px;
+
+    font-weight: 700;
+}
+
+.cta .btn:hover {
+    background: #f1f5f4;
+
+    color: var(--brand-dark);
+}
+
+
+/* =========================================
+   LOGIN MODAL
+   ========================================= */
+
+.modal-content {
+    border: 0;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.18);
+}
+
+.modal-content .form-control {
+    border: 1px solid #d8e3e0;
+
+    border-radius: 8px;
+
+    padding: 11px 13px;
+}
+
+.modal-content .form-control:focus {
+    border-color: var(--brand);
+
+    box-shadow: 0 0 0 0.2rem rgba(104, 135, 129, 0.15);
+}
+
+.modal-content .btn-brand {
+    background: var(--brand) !important;
+
+    color: white !important;
+
+    border: 1px solid var(--brand) !important;
+
+    border-radius: 8px;
+
+    padding: 11px 15px;
+}
+
+.modal-content .btn-brand:hover {
+    background: var(--brand-dark) !important;
+
+    border-color: var(--brand-dark) !important;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 991px) {
+
+    .hero {
+        min-height: 500px;
+    }
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .service-card {
+        margin-bottom: 5px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Hero */
+
+    .hero {
+        min-height: 520px;
+
+        border-radius: 0 0 14px 14px;
+
+        background:
+            linear-gradient(
+                rgba(19, 38, 35, 0.70),
+                rgba(19, 38, 35, 0.70)
+            ),
+            url("img/background.jpeg")
+            center center / cover no-repeat;
+    }
+
+
+    /* Hero content */
+
+    .hero-content {
+        padding: 70px 20px;
+    }
+
+
+    /* Hero heading */
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+
+    /* Hero paragraph */
+
+    .hero p {
+        font-size: 17px;
+    }
+
+
+    /* Trust items */
+
+    .trust-row {
+        margin-top: 25px;
+    }
+
+    .trust-item {
+        font-size: 12px;
+
+        padding: 7px 10px;
+    }
+
+
+    /* Section heading */
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+
+    /* Visi Misi */
+
+    .about-card {
+        padding: 25px;
+    }
+
+
+    /* Location */
+
+    .map-wrap iframe {
+        min-height: 300px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 35px 22px;
+
+        border-radius: 15px;
+    }
+
+    .cta h2 {
+        font-size: 29px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 576px) {
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero .btn-brand,
+    .hero .btn-light-outline {
+        width: 100%;
+    }
+
+    .trust-row {
+        gap: 7px;
+    }
+
+    .trust-item {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .section {
+        padding: 45px 15px;
+    }
+
+    .about-card {
+        padding: 22px;
+    }
+
+    .location-info {
+        padding: 25px;
+    }
+
+}
