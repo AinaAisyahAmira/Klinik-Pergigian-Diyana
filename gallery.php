@@ -64,7 +64,7 @@
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="treatment">
-          <img src="img/gallery/treatment-1.jpg" alt="Pemeriksaan gigi" onerror="this.src='img/clinic2.jpeg'">
+          <img src="img/gallery/treatment-1.jpg" alt="Pemeriksaan gigi" onerror="this.src='img/services1.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Pemeriksaan Gigi</span>
@@ -72,7 +72,7 @@
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="treatment">
-          <img src="img/gallery/treatment-2.jpg" alt="Rawatan scaling" onerror="this.src='img/background.jpeg'">
+          <img src="img/gallery/treatment-2.jpg" alt="Rawatan scaling" onerror="this.src='img/treatment.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Scaling & Pembersihan</span>
@@ -80,31 +80,31 @@
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="facility">
-          <img src="img/gallery/facility-3.jpg" alt="Peralatan moden" onerror="this.src='img/doctor3.jpg'">
+          <img src="img/gallery/treatment-3.jpg" alt="Peralatan moden" onerror="this.src='img/gigi palsu.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
-            <span>Peralatan Moden</span>
+            <span>Rawatan gigi palsu</span>
           </div>
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="treatment">
-          <img src="img/gallery/treatment-3.jpg" alt="Rawatan ortodontik" onerror="this.src='img/clinic2.jpeg'">
+          <img src="img/gallery/treatment-3.jpg" alt="Rawatan ortodontik" onerror="this.src='img/services3.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Rawatan Ortodontik</span>
           </div>
         </div>
 
-        <div class="col-6 col-md-4 gallery-item" data-category="team">
-          <img src="img/gallery/team-2.jpg" alt="Kakitangan klinik" onerror="this.src='img/clinic1.jpeg'">
+        <div class="col-6 col-md-4 gallery-item" data-category="treatment">
+          <img src="img/gallery/treatment-4.jpg" alt="Rawatan kanak-kanak" onerror="this.src='img/services2.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
-            <span>Kakitangan Klinik</span>
+            <span>Rawatan kanak-kanak</span>
           </div>
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="facility">
-          <img src="img/gallery/facility-4.jpg" alt="Muka depan klinik" onerror="this.src='img/klinikDiyana.jpg'">
+          <img src="img/gallery/facility-4.jpg" alt="Muka depan klinik" onerror="this.src='img/clinic4.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Muka Depan Klinik</span>
