@@ -40,7 +40,7 @@
       <div class="row g-3 gallery-grid" id="galleryGrid">
 
         <div class="col-6 col-md-4 gallery-item" data-category="facility">
-          <img src="img/gallery/facility-1.jpg" alt="Ruang menunggu klinik" onerror="this.src='img/clinic2.jpeg'">
+          <img src="img/gallery/facility-1.jpg" alt="Ruang menunggu klinik" onerror="this.src='img/ruang menunggu.jpeg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Ruang Menunggu</span>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="col-6 col-md-4 gallery-item" data-category="facility">
-          <img src="img/gallery/facility-2.jpg" alt="Bilik rawatan" onerror="this.src='img/background.jpeg'">
+          <img src="img/gallery/facility-2.jpg" alt="Bilik rawatan" onerror="this.src='img/d7.jpeg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Bilik Rawatan</span>
@@ -103,11 +103,35 @@
           </div>
         </div>
 
+        <div class="col-6 col-md-4 gallery-item" data-category="treatment">
+          <img src="img/gallery/treatment-5.jpg" alt="Rawatan kanak-kanak" onerror="this.src='img/d2.jpeg'">
+          <div class="gallery-overlay">
+            <i class="bi bi-zoom-in"></i>
+            <span>Rawatan Extraction</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 gallery-item" data-category="treatment">
+          <img src="img/gallery/treatment-6.jpg" alt="Rawatan kanak-kanak" onerror="this.src='img/d3.jpeg'">
+          <div class="gallery-overlay">
+            <i class="bi bi-zoom-in"></i>
+            <span>Rawatan Braces</span>
+          </div>
+        </div>
+
         <div class="col-6 col-md-4 gallery-item" data-category="facility">
           <img src="img/gallery/facility-4.jpg" alt="Muka depan klinik" onerror="this.src='img/clinic4.jpg'">
           <div class="gallery-overlay">
             <i class="bi bi-zoom-in"></i>
             <span>Muka Depan Klinik</span>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-4 gallery-item" data-category="facility">
+          <img src="img/gallery/facility-5.jpg" alt="Muka depan klinik" onerror="this.src='img/d5.jpeg'">
+          <div class="gallery-overlay">
+            <i class="bi bi-zoom-in"></i>
+            <span>Kaunter Pendaftaran</span>
           </div>
         </div>
 
