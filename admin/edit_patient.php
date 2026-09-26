@@ -176,7 +176,7 @@ function e($v): string {
 	</div>
 </div>
 
-<?php include("../footer.php"); ?>
+<?php include('../asset/footer.php'); ?>
 <script>
 function toggleSidebar() {
 	document.getElementById('sidebar').classList.toggle('show');
