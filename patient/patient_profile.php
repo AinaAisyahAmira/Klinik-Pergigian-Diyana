@@ -219,7 +219,7 @@ if (!$user) {
 
                 <form
                     method="POST"
-                    action="../asset/update_patient_settings.php"
+                    action="update_patient_setting.php"
                     class="row g-3"
                 >
 
