@@ -50,21 +50,34 @@ if (!$customer_id) {
     exit;
 }
 
+$showAppointmentPopup = !empty($_SESSION["show_appointment_popup"]);
+unset($_SESSION["show_appointment_popup"]);
+
 $notificationEntries = [];
-$notificationStmt = $conn->prepare("SELECT date, time, treatment, status, notes
-    FROM appointments
-    WHERE customer_id = ? AND TRIM(COALESCE(notes, '')) <> ''
-    ORDER BY date DESC, time DESC, id DESC
-    LIMIT 5");
-if ($notificationStmt) {
-    $notificationStmt->bind_param("i", $customer_id);
-    $notificationStmt->execute();
-    $notificationResult = $notificationStmt->get_result();
-    while ($row = $notificationResult->fetch_assoc()) {
-        $notificationEntries[] = $row;
+
+if (!isset($_SESSION["notification_shown"])) {
+    $notificationStmt = $conn->prepare("SELECT date, time, treatment, status, notes
+        FROM appointments
+        WHERE customer_id = ? AND TRIM(COALESCE(notes, '')) <> ''
+        ORDER BY date DESC, time DESC, id DESC
+        LIMIT 5");
+    if ($notificationStmt) {
+        $notificationStmt->bind_param("i", $customer_id);
+        $notificationStmt->execute();
+        $notificationResult = $notificationStmt->get_result();
+        while ($row = $notificationResult->fetch_assoc()) {
+            $notificationEntries[] = $row;
+        }
+        $notificationStmt->close();
     }
-    $notificationStmt->close();
+
+    // hanya set flag kalau betul-betul ada notification
+    if (!empty($notificationEntries)) {
+        $_SESSION["notification_shown"] = true;
+    }
 }
+
+
 
 $latestAppointment = null;
 $sqlLatestApp = "SELECT date, time, treatment, status
@@ -542,7 +555,7 @@ if ($latestAppointment && !empty(trim((string)($latestAppointment["status"] ?? "
 </div>
 
 
-<?php if ($statusPopup && $latestAppointment): ?>
+<?php if ($showAppointmentPopup && $statusPopup && $latestAppointment): ?>
 <style>
     .appointment-status-modal .modal-content {
         border: none;
@@ -719,7 +732,7 @@ function toggleSidebar() {
 
 }
 
-<?php if ($statusPopup && $latestAppointment): ?>
+<?php if ($showAppointmentPopup && $statusPopup && $latestAppointment): ?>
 document.addEventListener('DOMContentLoaded', function () {
     const appointmentModal = new bootstrap.Modal(document.getElementById('appointmentStatusModal'));
     appointmentModal.show();

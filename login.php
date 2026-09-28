@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["username"] = $row["username"];
             $_SESSION["role"]     = $row["role"];
             $_SESSION["user_id"]  = $row["id"];
+            $_SESSION["show_appointment_popup"] = $row["role"] === "customer";
 
             // Redirect ikut role
             if ($row["role"] == "admin") {
@@ -69,6 +70,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } elseif (empty($error)) {
         $error = "Username atau password salah!";
     }
+    
+    $_SESSION["notification_shown"] = false; // reset setiap kali login
+
 }
 ?>
 <!DOCTYPE html>
